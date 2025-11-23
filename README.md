@@ -39,17 +39,16 @@ NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
-You can find these values in your Supabase project settings under API.
+You can find these values in your Supabase project settings
 
 ### 3. Configure Supabase
 
 #### For Email + Password:
 - Enable Email provider in Authentication > Providers
-- Configure email templates if needed
 
 #### For Google Login:
 - Enable Google provider in Authentication > Providers
-- Add your redirect URL: `http://localhost:3000/auth/callback` (development)
+- Add your redirect URL
 - Add production redirect URL when deploying
 
 ### 4. Run the Development Server
@@ -114,4 +113,3 @@ Open [http://localhost:3000](http://localhost:3000) to see the demo.
 
 - [Supabase Auth Documentation](https://supabase.com/docs/guides/auth)
 - [Next.js Documentation](https://nextjs.org/docs)
-- [Supabase SSR Guide](https://supabase.com/docs/guides/auth/server-side/creating-a-client)

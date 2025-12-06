@@ -95,6 +95,17 @@ Open [http://localhost:3000](http://localhost:3000) to see the demo.
 - `/email-password` - Email + Password authentication demo
 - `/google-login` - Google OAuth authentication demo
 
+## Password Reset Flow
+
+The email/password demo ships with a complete Supabase recovery experience:
+
+1. Click **Forgot password?** while in the sign-in view. The client calls `supabase.auth.resetPasswordForEmail` and sends users to `/email-password?password-reset=true`.
+2. Supabase emails the reset link. Configure the Auth **Site URL** and allowed **Redirect URLs** in your project so the link is accepted in local/dev/staging environments.
+3. Following the link both signs the user in and flags the recovery session. The page detects `#type=recovery` or the `password-reset` query and surfaces the “Choose a new password” form even though a session exists.
+4. Submitting that form calls `supabase.auth.updateUser({ password })` and keeps the new session active so users stay logged in.
+
+If you customize the route, update the `redirectTo` option and allowed redirect URLs in Supabase to match.
+
 ## Scripts
 
 - `npm run dev` - Start development server

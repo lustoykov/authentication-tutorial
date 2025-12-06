@@ -7,6 +7,6 @@ export default async function GoogleLoginPage() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  console.log( { user });
+
   return <GoogleLoginDemo user={user} />;
 }

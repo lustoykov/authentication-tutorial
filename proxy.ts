@@ -24,7 +24,6 @@ export async function proxy(request: NextRequest) {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  console.log ({ user });
 
   // Redirect non-authenticated users away from protected routes
   if (!user && request.nextUrl.pathname.startsWith("/protected")) {
